@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/tienda-virtual2/static/css/main.6dafac8d.css",
+    "main.js": "/tienda-virtual2/static/js/main.996bfb4f.js",
+    "static/media/tennis1.jpg": "/tienda-virtual2/static/media/tennis1.38bee53d64f30c27f21a.jpg",
+    "static/media/logo.jpg": "/tienda-virtual2/static/media/logo.c965bc822d577961ad33.jpg",
+    "static/media/Fondo2.jpg": "/tienda-virtual2/static/media/Fondo2.68a10810993ea2559ffc.jpg",
+    "static/media/tennis3.jpg": "/tienda-virtual2/static/media/tennis3.32c80714dd668da10ba9.jpg",
+    "static/media/tennis2.jpg": "/tienda-virtual2/static/media/tennis2.1de6e5c83133c014b530.jpg",
+    "static/media/ropaDeportiva.jpg": "/tienda-virtual2/static/media/ropaDeportiva.4acbd51c3176993f6f20.jpg",
+    "static/media/bici1.jpg": "/tienda-virtual2/static/media/bici1.12a1bff96dd8712fe816.jpg",
+    "static/media/Buzo2.jpg": "/tienda-virtual2/static/media/Buzo2.73b9c95601b1dbab2a0d.jpg",
+    "static/media/Buzo1.jpg": "/tienda-virtual2/static/media/Buzo1.41439e2e3aafa7823141.jpg",
+    "index.html": "/tienda-virtual2/index.html",
+    "main.6dafac8d.css.map": "/tienda-virtual2/static/css/main.6dafac8d.css.map",
+    "main.996bfb4f.js.map": "/tienda-virtual2/static/js/main.996bfb4f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6dafac8d.css",
+    "static/js/main.996bfb4f.js"
+  ]
+}
