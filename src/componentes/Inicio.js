@@ -8,7 +8,6 @@ const Inicio = () => {
     const [password, setPassword] = useState('');
     const [recordar, setRecordar] = useState(false);
 
-    // Cargar usuario y contraseña
     useEffect(() => {
         const savedUser = localStorage.getItem('usuario');
         const savedPassword = localStorage.getItem('password');
@@ -47,7 +46,7 @@ const Inicio = () => {
                 localStorage.removeItem('password');
                 localStorage.setItem('recordar', 'false');
             }
-            navigate('/productos');  // Redirigir a la página de productos
+            navigate('/productos');
         } else {
             alert('Usuario o contraseña incorrectos');
             setUsuario('');

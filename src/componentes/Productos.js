@@ -150,19 +150,19 @@ const Productos = () => {
                     />
                     <ProductCard 
                         imgSrc={images.adidasNegra} 
-                        title="Tennis Adidas" 
-                        price="$50,000" 
+                        title="Sudadera Adidas" 
+                        price="$250,000" 
                         discount="5%" 
                         id="prod-8" 
-                        onAddToCart={() => handleAddToCart({ id: 'prod-8', title: 'Tennis Adidas', price: '$50,000', imgSrc: images.adidasNegra })} 
+                        onAddToCart={() => handleAddToCart({ id: 'prod-8', title: 'Tennis Adidas', price: '$250,000', imgSrc: images.adidasNegra })} 
                     />
                     <ProductCard 
                         imgSrc={images.pantaloneta} 
-                        title="Balon FPC" 
-                        price="$120,000" 
+                        title="Pantaloneta Adidas" 
+                        price="$220,000" 
                         discount="3%" 
                         id="prod-9" 
-                        onAddToCart={() => handleAddToCart({ id: 'prod-9', title: 'Balon FPC', price: '$120,000', imgSrc: images.pantaloneta })} 
+                        onAddToCart={() => handleAddToCart({ id: 'prod-9', title: 'Balon FPC', price: '$220,000', imgSrc: images.pantaloneta })} 
                     />
                 </div>
             </section>

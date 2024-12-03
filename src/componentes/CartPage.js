@@ -1,18 +1,17 @@
 // src/componentes/CartPage.js
 
 import React from 'react';
-import { useCart } from '../texto/cartTexto';  // Usamos el hook del carrito
-import '../css/Carrito.css';  // Estilos del carrito
-
+import { useCart } from '../texto/cartTexto';  
+import '../css/Carrito.css';  
 const CartPage = () => {
-  const { cart, removeFromCart, getTotalPrice } = useCart();  // Accedemos al carrito y las funciones
+  const { cart, removeFromCart, getTotalPrice } = useCart(); 
 
-  // Función para formatear los precios
   const formatPrice = (price) => {
-    const priceNumber = parseFloat(price.replace(/[^\d.-]/g, '')); // Eliminar símbolos no numéricos
+    const priceNumber = parseFloat(price.replace(/[^\d.-]/g, ''));
+
     return new Intl.NumberFormat('es-CO', {
       style: 'currency',
-      currency: 'COP',  // Usamos pesos colombianos
+      currency: 'COP',  
     }).format(priceNumber);
   };
 
@@ -20,18 +19,18 @@ const CartPage = () => {
     <div className="cart-page">
       <h1>Productos en el Carrito</h1>
       
-      {/* Si el carrito está vacío */}
+      
       {cart.length === 0 ? (
         <p>Tu carrito está vacío.</p>
       ) : (
         <div className="cart-items">
-          {/* Recorremos todos los productos del carrito */}
+          
           {cart.map((product) => (
             <div key={product.id} className="cart-item">
               <img 
                 src={product.imgSrc} 
                 alt={product.title} 
-                className="cart-item-image"  // Estilo para la imagen del producto
+                className="cart-item-image"  
               />
               <h2>{product.title}</h2>
               <p>{formatPrice(product.price)} x {product.quantity}</p> {/* Mostrar precio y cantidad */}
@@ -43,7 +42,7 @@ const CartPage = () => {
         </div>
       )}
 
-      {/* Mostrar el total del carrito si hay productos */}
+      
       {cart.length > 0 && (
         <div className="cart-total">
           <h3>Total: {formatPrice(getTotalPrice())}</h3>

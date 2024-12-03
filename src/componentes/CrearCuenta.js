@@ -4,7 +4,6 @@ import '../css/crearCuenta.css';
 
 const CrearCuenta = () => {
     const navigate = useNavigate();
-
     const [formData, setFormData] = useState({
         nombre: '',
         apellidos: '',
@@ -28,7 +27,6 @@ const CrearCuenta = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Verificar que las contraseñas coincidan
         if (formData.password !== formData.confirmarPassword) {
             alert('Las contraseñas no coinciden');
             return;
@@ -39,10 +37,7 @@ const CrearCuenta = () => {
             fechaHora: new Date().toLocaleString(),
         };
 
-        // Leer los usuarios del almacenamiento local (si existe)
         const usuariosGuardados = JSON.parse(localStorage.getItem('usuarios')) || [];
-
-        // Verificar si el usuario ya existe
         const usuarioExistente = usuariosGuardados.find(
             (usuario) => usuario.usuario === formData.usuario
         );
@@ -52,12 +47,11 @@ const CrearCuenta = () => {
             return;
         }
 
-        // Agregar el nuevo usuario al array de usuarios
         usuariosGuardados.push(nuevoUsuario);
         localStorage.setItem('usuarios', JSON.stringify(usuariosGuardados));
 
         alert('Cuenta creada exitosamente. Ahora puedes iniciar sesión.');
-        navigate('/');  // Redirige al login o página principal
+        navigate('/');
     };
 
     return (
@@ -159,5 +153,6 @@ const CrearCuenta = () => {
 };
 
 export default CrearCuenta;
+
 
 
