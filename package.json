@@ -1,8 +1,8 @@
 {
-  "name": "tienda-virtual2",
+  "name": "tienda-virtual-poli",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://r2x4.github.io/tienda-virtual2",
+  "homepage": "https://r2x4.github.io/tienda-virtual-poli",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
