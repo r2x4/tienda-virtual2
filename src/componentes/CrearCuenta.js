@@ -15,6 +15,7 @@ const CrearCuenta = () => {
         password: '',
         confirmarPassword: '',
     });
+    const [error, setError] = useState('');
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -27,8 +28,15 @@ const CrearCuenta = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Verificación de contraseñas
         if (formData.password !== formData.confirmarPassword) {
-            alert('Las contraseñas no coinciden');
+            setError('Las contraseñas no coinciden');
+            return;
+        }
+
+        // Validación de campos vacíos
+        if (!formData.nombre || !formData.apellidos || !formData.correo || !formData.usuario || !formData.password) {
+            setError('Por favor, rellena todos los campos obligatorios');
             return;
         }
 
@@ -38,12 +46,14 @@ const CrearCuenta = () => {
         };
 
         const usuariosGuardados = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+        // Verificación de usuario existente
         const usuarioExistente = usuariosGuardados.find(
             (usuario) => usuario.usuario === formData.usuario
         );
 
         if (usuarioExistente) {
-            alert('Este usuario ya existe. Elige otro nombre de usuario.');
+            setError('Este usuario ya existe. Elige otro nombre de usuario.');
             return;
         }
 
@@ -51,7 +61,7 @@ const CrearCuenta = () => {
         localStorage.setItem('usuarios', JSON.stringify(usuariosGuardados));
 
         alert('Cuenta creada exitosamente. Ahora puedes iniciar sesión.');
-        navigate('/');
+        navigate('/'); // Redirige a la página de inicio
     };
 
     return (
@@ -65,7 +75,7 @@ const CrearCuenta = () => {
                         name="nombre"
                         value={formData.nombre}
                         onChange={handleInputChange}
-                        placeholder="Name"
+                        placeholder="Nombre"
                         required
                     />
                     <label htmlFor="apellidos">Apellidos</label>
@@ -75,7 +85,7 @@ const CrearCuenta = () => {
                         name="apellidos"
                         value={formData.apellidos}
                         onChange={handleInputChange}
-                        placeholder="Last Name"
+                        placeholder="Apellidos"
                         required
                     />
                     <label htmlFor="correo">Correo electrónico</label>
@@ -85,7 +95,7 @@ const CrearCuenta = () => {
                         name="correo"
                         value={formData.correo}
                         onChange={handleInputChange}
-                        placeholder="Email"
+                        placeholder="Correo electrónico"
                         required
                     />
                     <label htmlFor="telefono">Teléfono</label>
@@ -95,7 +105,7 @@ const CrearCuenta = () => {
                         name="telefono"
                         value={formData.telefono}
                         onChange={handleInputChange}
-                        placeholder="Phone"
+                        placeholder="Teléfono"
                     />
                     <label htmlFor="ciudad">Ciudad</label>
                     <input
@@ -104,7 +114,7 @@ const CrearCuenta = () => {
                         name="ciudad"
                         value={formData.ciudad}
                         onChange={handleInputChange}
-                        placeholder="City"
+                        placeholder="Ciudad"
                     />
                     <label htmlFor="pais">País</label>
                     <input
@@ -113,7 +123,7 @@ const CrearCuenta = () => {
                         name="pais"
                         value={formData.pais}
                         onChange={handleInputChange}
-                        placeholder="Country"
+                        placeholder="País"
                     />
                     <label htmlFor="usuario">Usuario</label>
                     <input
@@ -122,7 +132,7 @@ const CrearCuenta = () => {
                         name="usuario"
                         value={formData.usuario}
                         onChange={handleInputChange}
-                        placeholder="Username"
+                        placeholder="Usuario"
                         required
                     />
                     <label htmlFor="password">Contraseña</label>
@@ -132,7 +142,7 @@ const CrearCuenta = () => {
                         name="password"
                         value={formData.password}
                         onChange={handleInputChange}
-                        placeholder="Password"
+                        placeholder="Contraseña"
                         required
                     />
                     <label htmlFor="confirmarPassword">Confirmar Contraseña</label>
@@ -142,9 +152,10 @@ const CrearCuenta = () => {
                         name="confirmarPassword"
                         value={formData.confirmarPassword}
                         onChange={handleInputChange}
-                        placeholder="Confirm Password"
+                        placeholder="Confirmar Contraseña"
                         required
                     />
+                    {error && <p className="error-message">{error}</p>}
                     <button type="submit" className="submit-btn">Crear Cuenta</button>
                 </form>
             </section>
@@ -153,6 +164,7 @@ const CrearCuenta = () => {
 };
 
 export default CrearCuenta;
+
 
 
 

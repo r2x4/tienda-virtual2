@@ -94,6 +94,14 @@ form input[type="tel"]:focus {
     background-color: #2a0d91;
 }
 
+/* Mensaje de error */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 /* Responsividad para pantallas medianas (tablet) */
 @media (max-width: 768px) {
     .crear-cuenta-container {
